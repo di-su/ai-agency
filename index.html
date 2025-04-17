@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mortgage Broker Workflow: Before & After AI Automation</title>
+    <style>
+        body { font-family: sans-serif; line-height: 1.6; padding: 20px; background-color: #f4f7f6; }
+        h1, h2 { text-align: center; color: #333; }
+        .container { display: flex; justify-content: space-around; gap: 20px; margin-top: 30px; }
+        .column { background-color: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); width: 45%; }
+        .column h2 { margin-top: 0; color: #555; border-bottom: 2px solid #eee; padding-bottom: 10px; }
+        .workflow-step {
+            background-color: #e9ecef;
+            border: 1px solid #ced4da;
+            border-radius: 5px;
+            padding: 10px 15px;
+            margin-bottom: 15px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .workflow-step:hover { background-color: #dde2e6; }
+        .step-title { font-weight: bold; color: #0056b3; margin-bottom: 5px; }
+        .step-details { display: none; margin-top: 10px; font-size: 0.9em; color: #495057; }
+        .step-details.active { display: block; }
+        .step-details strong { color: #28a745; } /* Highlight tools/benefits in green */
+        .after .step-details strong { color: #dc3545; } /* Highlight pain points in red */
+        .after .step-title { color: #28a745; } /* Green title for 'After' steps */
+
+         /* Simple interactivity indicator */
+        .workflow-step::after {
+            content: ' ▼';
+            font-size: 0.8em;
+            float: right;
+            transition: transform 0.3s ease;
+        }
+         .workflow-step.open::after {
+            transform: rotate(180deg);
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Mortgage Broker Workflow Comparison</h1>
+
+    <div class="container">
+        <div class="column before">
+            <h2>Manual Workflow (Before Automation)</h2>
+
+            <div class="workflow-step" onclick="toggleDetails(this)">
+                <div class="step-title">1. Lead Capture</div>
+                <div class="step-details">
+                    - Manually check emails/DMs for new leads.<br>
+                    - Info often incomplete or messy.<br>
+                    - Reply manually asking standard questions.<br>
+                    - Manually create entry in spreadsheet/basic CRM.<br>
+                    <strong>Pain Points:</strong> Slow, repetitive, inconsistent data, time-consuming.
+                </div>
+            </div>
+
+            <div class="workflow-step" onclick="toggleDetails(this)">
+                <div class="step-title">2. Pre-Qualification & Initial Contact</div>
+                <div class="step-details">
+                    - Review basic info provided (if any).<br>
+                    - Manually email a checklist of required documents.<br>
+                    - Decide if lead is worth pursuing.<br>
+                    <strong>Pain Points:</strong> Back-and-forth emails, delays, manual assessment.
+                </div>
+            </div>
+
+            <div class="workflow-step" onclick="toggleDetails(this)">
+                <div class="step-title">3. Document Collection</div>
+                <div class="step-details">
+                    - Manually track who sent what.<br>
+                    - Chase clients via email/phone for missing docs.<br>
+                    - Download attachments from emails.<br>
+                    - Manually sort/rename files into folders (or desktop chaos).<br>
+                    <strong>Pain Points:</strong> Huge time sink, frustrating, disorganized, delays deals.
+                </div>
+            </div>
+
+             <div class="workflow-step" onclick="toggleDetails(this)">
+                <div class="step-title">4. Application & Quoting</div>
+                <div class="step-details">
+                    - Manually enter client data into lender portals.<br>
+                    - Search for suitable mortgage products.<br>
+                    - Manually type up recommendation emails/summaries.<br>
+                    <strong>Pain Points:</strong> Data re-entry, time spent writing similar emails.
+                </div>
+            </div>
+
+            <div class="workflow-step" onclick="toggleDetails(this)">
+                <div class="step-title">5. Follow-up & Updates</div>
+                <div class="step-details">
+                    - Manually check deal status.<br>
+                    - Manually email clients with updates (or forget).<br>
+                    - Respond to "where are we?" queries individually.<br>
+                    - Manual appointment scheduling.<br>
+                    - No systematic post-deal follow-up.<br>
+                    <strong>Pain Points:</strong> Time-consuming, reactive, missed opportunities for future business.
+                </div>
+            </div>
+
+        </div>
+
+        <div class="column after">
+            <h2>AI-Automated Workflow (After)</h2>
+
+            <div class="workflow-step" onclick="toggleDetails(this)">
+                <div class="step-title">1. Lead Capture & Intake</div>
+                <div class="step-details">
+                    - Lead fills out smart online form (<strong>Tally/Typeform</strong>).<br>
+                    - Data automatically sent to CRM (<strong>Airtable/Notion</strong>) via <strong>Zapier/Make</strong>.<br>
+                    - AI generates quick summary for broker.<br>
+                    - Auto-sends professional welcome email with next steps.<br>
+                    <strong>Benefits:</strong> Instant, consistent, professional, data captured cleanly.
+                </div>
+            </div>
+
+             <div class="workflow-step" onclick="toggleDetails(this)">
+                <div class="step-title">2. Pre-Qualification & Doc Request</div>
+                <div class="step-details">
+                    - Form collects all necessary initial info.<br>
+                    - Automated email/SMS sent with personalized document checklist.<br>
+                    - Secure upload link provided (e.g., to <strong>Google Drive</strong>).<br>
+                    <strong>Benefits:</strong> Faster qualification, clear instructions, streamlined process.
+                </div>
+            </div>
+
+            <div class="workflow-step" onclick="toggleDetails(this)">
+                <div class="step-title">3. Automated Document Collection</div>
+                <div class="step-details">
+                    - CRM (<strong>Airtable</strong>) tracks received/missing docs.<br>
+                    - Automated email/SMS reminders sent (via <strong>Zapier + Twilio</strong>) for missing docs.<br>
+                    - Files automatically named/sorted into client's <strong>Google Drive</strong> folder.<br>
+                    <strong>Benefits:</strong> Saves hours of chasing, keeps deals moving, organized files.
+                </div>
+            </div>
+
+            <div class="workflow-step" onclick="toggleDetails(this)">
+                <div class="step-title">4. Application & Quoting Assist</div>
+                <div class="step-details">
+                    - Clean data ready in CRM for easier input to lender portals.<br>
+                    - AI assist (<strong>ChatGPT/Zapier AI</strong>) drafts summary/recommendation emails based on templates.<br>
+                    - Broker reviews & sends with minor edits.<br>
+                    <strong>Benefits:</strong> Faster communication, consistent messaging.
+                </div>
+            </div>
+
+            <div class="workflow-step" onclick="toggleDetails(this)">
+                <div class="step-title">5. Automated Follow-up & Updates</div>
+                <div class="step-details">
+                    - Automated status updates triggered by CRM stage changes.<br>
+                    - Easy scheduling via integrated link (<strong>Calendly/TidyCal</strong>).<br>
+                    - Automated reminders for appointments.<br>
+                    - Post-completion thank you & automated future review reminders.<br>
+                    <strong>Benefits:</strong> Proactive communication, less manual work, builds client loyalty, generates future leads.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleDetails(element) {
+            const details = element.querySelector('.step-details');
+            const isOpen = details.classList.contains('active');
+
+            // Close all other open details
+            document.querySelectorAll('.step-details.active').forEach(openDetail => {
+                if (openDetail !== details) {
+                    openDetail.classList.remove('active');
+                    openDetail.closest('.workflow-step').classList.remove('open');
+                }
+            });
+
+            // Toggle the clicked one
+            details.classList.toggle('active');
+            element.classList.toggle('open');
+        }
+
+        // Add this script to expand all sections by default on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('.workflow-step').forEach(step => {
+                const details = step.querySelector('.step-details');
+                if (details) {
+                    details.classList.add('active'); // Show details
+                }
+                step.classList.add('open'); // Set icon to 'open' state
+            });
+        });
+    </script>
+
+</body>
+</html> 
